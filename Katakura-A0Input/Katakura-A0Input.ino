@@ -4,7 +4,7 @@
 
 #define analogPin  A0   // 使用するアナログ入力ピン
 #define SW_PIN     13   // スイッチ用のデジタルピン
-#define delay      100  // 必要に応じて調整
+#define DLY      100  // 必要に応じて調整
 
 void setup() {
   Serial.begin(115200);  // シリアル通信を開始
@@ -16,9 +16,9 @@ void loop() {
   byte normalized = map(analogValue, 0, 1023, 0, 255);         // 0〜255に正規化
   if (digitalRead(SW_PIN) == LOW) {                            // スイッチが押された場合
     Serial.println(normalized);
-  }else
+  }else{
     Serial.write(normalized);                                    // バイナリ（1バイト）で送信  
   } 
-  delay(DLY); 
+  delay(DLY);
 }
 
