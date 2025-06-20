@@ -21,13 +21,18 @@ void setup() {
 
   //データの受け取り方の設定
   ///////////////////////////////////////////
+  //データが来ない場合ここの数字を変更する
+  ///////////////////////////////////////////
   String portName = Serial.list()[0];
+  for(int i = 0; i < Serial.list().length; i++){
+    println(Serial.list()[i]);
+  }
   myPort = new Serial(this, portName, 115200);
 
   //動画1と動画2を読み込み(""の中にファイル名を書く)
   ///////////////////////////////////////////
-  movie1 = new Movie(this, "Sample1.mp4");
-  movie2 = new Movie(this, "Sample2.mp4");
+  movie1 = new Movie(this, "SampleA.mp4");
+  movie2 = new Movie(this, "SampleB.mp4");
   //3本以上使う場合はコピーして数字を増やす
   ///////////////////////////////////////////
   //movie3 = new Movie(this, "Sample3.mp4");
@@ -43,7 +48,6 @@ void draw() {
     //センサの値を確認
     println(val);
   }
-
   //センサのデータを受け取るところ
   ////////////////////////////////////////////////////////////////
 
