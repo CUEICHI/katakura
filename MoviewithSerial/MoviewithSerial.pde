@@ -23,7 +23,7 @@ void setup() {
   ///////////////////////////////////////////
   //データが来ない場合ここの数字を変更する
   ///////////////////////////////////////////
-  String portName = Serial.list()[0];
+  String portName = Serial.list()[0];//この行の数字を0から1ずつ上げていく
   for(int i = 0; i < Serial.list().length; i++){
     println(Serial.list()[i]);
   }
